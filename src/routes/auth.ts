@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { PrismaClient } from '@prisma/client';
-import { hash, verify } from '@node-rs/bcrypt';
+import { hash, verify } from '../utils/bcrypt';
 import { generateToken } from '../utils/jwt';
 import { RegisterUserSchema, LoginUserSchema } from '../utils/validations';
 import { addHours } from 'date-fns';

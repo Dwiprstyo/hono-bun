@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { zValidator } from '@hono/zod-validator';
 import { PrismaClient } from '@prisma/client';
-import { hash, verify } from '@node-rs/bcrypt';
+import { hash, verify } from '../utils/bcrypt';
 import { ProfileUpdateSchema } from '../utils/validations';
 import { authMiddleware } from '../middleware/auth';
 
@@ -81,7 +81,7 @@ app.put('/profile', authMiddleware, zValidator('json', ProfileUpdateSchema), asy
             }
 
             // Hash new password
-            updateData.password = await hash(data.newPassword, 10);
+            updateData.password = await hash(data.newPassword);
         }
 
         // Remove unnecessary fields

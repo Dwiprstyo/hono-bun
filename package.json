@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.4.2",
-    "@node-rs/bcrypt": "^1.7.0",
     "@prisma/client": "^6.0.1",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
     "date-fns": "^4.1.0",
     "hono": "^3.12.8",
     "zod": "^3.22.4"
@@ -19,6 +20,9 @@
     "bun-types": "latest",
     "prisma": "^6.0.1",
     "typescript": "^5.3.3"
+  },
+  "resolutions": {
+    "@node-rs/bcrypt": "^1.10.7"
   },
   "module": "src/index.ts",
   "type": "module"
